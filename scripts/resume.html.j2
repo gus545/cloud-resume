@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ basics.name | default("My Resume") }}</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="counter.js" defer></script>
+  </head>
+  <body>
+    <header class="resume-header">
+      <h1 class="name">{{ basics.name }}</h1>
+      <p class="tagline">{{ basics.label | default("") }}</p>
+      <div class="contact-info">
+        {% if basics.email %}
+        <a href="mailto:{{ basics.email }}" class="contact-item">
+          <span class="icon">📧</span>Email
+        </a>
+        {% endif %}
+        {% if basics.phone %}
+        <a href="tel:{{ basics.phone }}" class="contact-item">
+          <span class="icon">📞</span>Phone
+        </a>
+        {% endif %}
+        {% if basics.url %}
+        <a href="{{ basics.url }}" class="contact-item">
+          <span class="icon">🌐</span>Website
+        </a>
+        {% endif %}
+        {% for profile in basics.profiles | default([]) %}
+        <a href="{{ profile.url }}" class="contact-item">
+          <span class="icon">🔗</span>{{ profile.network }}
+        </a>
+        {% endfor %}
+      </div>
+    </header>
+
+    {% if basics.summary %}
+    <section>
+      <div class="section-header">
+        <h2>Summary</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        <p>{{ basics.summary }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if education %}
+    <section>
+      <div class="section-header">
+        <h2>Education</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for edu in education %}
+        <div class="exp-item">
+          <div class="row-split">
+            <h3 class="exp-name">{{ edu.institution }}</h3>
+            <span class="exp-location">{{ edu.endDate | default(edu.startDate) }}</span>
+          </div>
+          <div class="row-split">
+            <span class="exp-desc">{{ edu.area }}{% if edu.minor %}, Minor in {{ edu.minor }}{% endif %}</span>
+            <span class="date">{{ edu.studyType | default("") }}</span>
+          </div>
+          {% if edu.score %}
+          <p>GPA: {{ edu.score }}</p>
+          {% endif %}
+          {% if edu.courses %}
+          <ul class="exp-details">
+            {% for course in edu.courses %}
+            <li>{{ course }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if skills %}
+    <section>
+      <div class="section-header">
+        <h2>Technical Skills</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        <div class="skills-container">
+          {% for skill in skills %}
+          <div class="skill-category">
+            <h3>{{ skill.name }}</h3>
+            <div class="skill-list">
+              {% for keyword in skill.keywords | default([]) %}
+              <span>{{ keyword }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if projects %}
+    <section>
+      <div class="section-header">
+        <h2>Projects</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for project in projects %}
+        <div class="exp-item">
+          <div class="row-split">
+            <h3 class="exp">{{ project.name }}</h3>
+            <span class="exp-location">{% if project.url %}<a href="{{ project.url }}">{{ project.url }}</a>{% endif %}</span>
+          </div>
+          <div class="row-split">
+            <span class="exp-desc">{{ project.description | default("") }}</span>
+            <span class="date">{% if project.startDate %}{{ project.startDate }}{% if project.endDate %} - {{ project.endDate }}{% endif %}{% endif %}</span>
+          </div>
+          {% if project.highlights %}
+          <ul class="exp-details">
+            {% for highlight in project.highlights %}
+            <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if work %}
+    <section>
+      <div class="section-header">
+        <h2>Work</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for job in work %}
+        <div class="exp-item">
+          <div class="row-split">
+            <h3 class="exp">{{ job.name }}</h3>
+            <span class="exp-location">{{ job.location | default("") }}</span>
+          </div>
+          <div class="row-split">
+            <span class="exp-desc">{{ job.position }}</span>
+            <span class="date">{{ job.startDate }}{% if job.endDate %} - {{ job.endDate }}{% endif %}</span>
+          </div>
+          {% if job.summary %}
+          <p>{{ job.summary }}</p>
+          {% endif %}
+          {% if job.highlights %}
+          <ul class="exp-details">
+            {% for highlight in job.highlights %}
+            <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if volunteer %}
+    <section>
+      <div class="section-header">
+        <h2>Volunteer</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for vol in volunteer %}
+        <div class="exp-item">
+          <div class="row-split">
+            <h3 class="exp">{{ vol.organization }}</h3>
+            <span class="exp-location">{{ vol.location | default("") }}</span>
+          </div>
+          <div class="row-split">
+            <span class="exp-desc">{{ vol.position }}</span>
+            <span class="date">{{ vol.startDate }}{% if vol.endDate %} - {{ vol.endDate }}{% endif %}</span>
+          </div>
+          {% if vol.summary %}
+          <p>{{ vol.summary }}</p>
+          {% endif %}
+          {% if vol.highlights %}
+          <ul class="exp-details">
+            {% for highlight in vol.highlights %}
+            <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if awards %}
+    <section>
+      <div class="section-header">
+        <h2>Awards</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for award in awards %}
+        <div class="exp-item">
+          <div class="row-split">
+            <h3 class="exp">{{ award.title }}</h3>
+            <span class="exp-location">{{ award.date | default("") }}</span>
+          </div>
+          <div class="row-split">
+            <span class="exp-desc">{{ award.awarder | default("") }}</span>
+            <span class="date"></span>
+          </div>
+          {% if award.summary %}
+          <p>{{ award.summary }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if certificates %}
+    <section>
+      <div class="section-header">
+        <h2>Certificates</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for cert in certificates %}
+        <div class="exp-item">
+          <div class="row-split">
+            <h3 class="exp">{{ cert.name }}</h3>
+            <span class="exp-location">{{ cert.date | default("") }}</span>
+          </div>
+          <div class="row-split">
+            <span class="exp-desc">{{ cert.issuer | default("") }}</span>
+            <span class="date">{% if cert.url %}<a href="{{ cert.url }}">View</a>{% endif %}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if publications %}
+    <section>
+      <div class="section-header">
+        <h2>Publications</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for pub in publications %}
+        <div class="exp-item">
+          <div class="row-split">
+            <h3 class="exp">{{ pub.name }}</h3>
+            <span class="exp-location">{{ pub.releaseDate | default("") }}</span>
+          </div>
+          <div class="row-split">
+            <span class="exp-desc">{{ pub.publisher | default("") }}</span>
+            <span class="date">{% if pub.url %}<a href="{{ pub.url }}">View</a>{% endif %}</span>
+          </div>
+          {% if pub.summary %}
+          <p>{{ pub.summary }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if languages %}
+    <section>
+      <div class="section-header">
+        <h2>Languages</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        <div class="skills-container">
+          <div class="skill-category">
+            <div class="skill-list">
+              {% for lang in languages %}
+              <span>{{ lang.language }}{% if lang.fluency %} ({{ lang.fluency }}){% endif %}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if interests %}
+    <section>
+      <div class="section-header">
+        <h2>Interests</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        <div class="skills-container">
+          {% for interest in interests %}
+          <div class="skill-category">
+            <h3>{{ interest.name }}</h3>
+            {% if interest.keywords %}
+            <div class="skill-list">
+              {% for keyword in interest.keywords %}
+              <span>{{ keyword }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if references %}
+    <section>
+      <div class="section-header">
+        <h2>References</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        {% for ref in references %}
+        <div class="exp-item">
+          <h3 class="exp">{{ ref.name }}</h3>
+          {% if ref.reference %}
+          <blockquote>{{ ref.reference }}</blockquote>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    <div class="visit-counter">
+      <span id="visit-count">-</span> visits
+    </div>
+  </body>
+</html>
