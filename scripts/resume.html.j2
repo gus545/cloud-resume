@@ -17,11 +17,6 @@
           <span class="icon">📧</span>Email
         </a>
         {% endif %}
-        {% if basics.phone %}
-        <a href="tel:{{ basics.phone }}" class="contact-item">
-          <span class="icon">📞</span>Phone
-        </a>
-        {% endif %}
         {% if basics.url %}
         <a href="{{ basics.url }}" class="contact-item">
           <span class="icon">🌐</span>Website
@@ -57,11 +52,11 @@
         {% for edu in education %}
         <div class="exp-item">
           <div class="row-split">
-            <h3 class="exp-name">{{ edu.institution }}</h3>
-            <span class="exp-location">{{ edu.endDate | default(edu.startDate) }}</span>
+            <h3 class="exp-name">{{ edu.area }}{% if edu.minor %}, Minor in {{ edu.minor }}{% endif %}</h3>
+            <span class="exp-location">{{ edu.startDate }} - {{ edu.endDate }}</span>
           </div>
           <div class="row-split">
-            <span class="exp-desc">{{ edu.area }}{% if edu.minor %}, Minor in {{ edu.minor }}{% endif %}</span>
+            <span class="exp-desc">{{ edu.institution }}</span>
             <span class="date">{{ edu.studyType | default("") }}</span>
           </div>
           {% if edu.score %}
@@ -80,28 +75,6 @@
     </section>
     {% endif %}
 
-    {% if skills %}
-    <section>
-      <div class="section-header">
-        <h2>Technical Skills</h2>
-        <hr />
-      </div>
-      <div class="section-content">
-        <div class="skills-container">
-          {% for skill in skills %}
-          <div class="skill-category">
-            <h3>{{ skill.name }}</h3>
-            <div class="skill-list">
-              {% for keyword in skill.keywords | default([]) %}
-              <span>{{ keyword }}</span>
-              {% endfor %}
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-    {% endif %}
 
     {% if projects %}
     <section>
@@ -136,7 +109,7 @@
     {% if work %}
     <section>
       <div class="section-header">
-        <h2>Work</h2>
+        <h2>Work Experience</h2>
         <hr />
       </div>
       <div class="section-content">
@@ -169,7 +142,7 @@
     {% if volunteer %}
     <section>
       <div class="section-header">
-        <h2>Volunteer</h2>
+        <h2>Volunteer Experience</h2>
         <hr />
       </div>
       <div class="section-content">
@@ -236,18 +209,39 @@
         <div class="exp-item">
           <div class="row-split">
             <h3 class="exp">{{ cert.name }}</h3>
-            <span class="exp-location">{{ cert.date | default("") }}</span>
+            <span class="exp-location">{% if cert.url %}<a href="{{ cert.url }}">View</a>{% endif %}</span>
           </div>
           <div class="row-split">
             <span class="exp-desc">{{ cert.issuer | default("") }}</span>
-            <span class="date">{% if cert.url %}<a href="{{ cert.url }}">View</a>{% endif %}</span>
+            <span class="date">{% if cert.date %}{{ cert.date }}{% endif %}</span>
           </div>
         </div>
         {% endfor %}
       </div>
     </section>
     {% endif %}
-
+    {% if skills %}
+    <section>
+      <div class="section-header">
+        <h2>Technical Skills</h2>
+        <hr />
+      </div>
+      <div class="section-content">
+        <div class="skills-container">
+          {% for skill in skills %}
+          <div class="skill-category">
+            <h3>{{ skill.name }}</h3>
+            <div class="skill-list">
+              {% for keyword in skill.keywords | default([]) %}
+              <span>{{ keyword }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
     {% if publications %}
     <section>
       <div class="section-header">

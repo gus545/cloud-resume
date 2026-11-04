@@ -3,10 +3,10 @@
   "basics": {
     "name": "Angus MacGillivary",
     "label": "Computer Science Graduate",
-    "email": "angusmdev@gmail.com",
+    "email": "angus@macgillivary.dev",
     "phone": "613-316-4793",
-    "url": "",
-    "summary": "",
+    "url": "https://macgillivary.dev",
+    "summary": "CS graduate with a background in cloud computing and software engineering.  3+ years of experience working in fast-paced kitchens, developing strong teamwork and communication skills. Familiary with AWS, Microsoft Azure and full-stack technologies such as Python, PostgreSQL and FastAPI.  Passionate about learning and applying new technologies to solve real-world problems.",
     "location": {
       "city": "Orléans",
       "region": "Ontario",
@@ -17,7 +17,12 @@
         "network": "LinkedIn",
         "username": "amacg",
         "url": "https://linkedin.com/in/amacg"
-      }
+      },
+      {
+        "network": "GitHub",
+        "username": "gus545",
+        "url": "https://github.com/gus545"
+        }
     ]
   },
   "education": [
@@ -25,8 +30,8 @@
       "institution": "Carleton University",
       "area": "Computer Science Honours, Minor in Psychology",
       "studyType": "Bachelor",
-      "startDate": "",
-      "endDate": "2025-02",
+      "startDate": "2019/09",
+      "endDate": "2025/02",
       "location": "Ottawa, ON",
       "courses": [
         "Computer Vision",
@@ -39,36 +44,45 @@
   ],
   "work": [
     {
-      "name": "Taproom260",
-      "position": "Cook (Closer)",
-      "startDate": "2024-02",
-      "endDate": "2025-10",
+      "name": "That Cafe",
+      "position": "Cook",
+      "startDate": "2026/01",
       "location": "Orléans, ON",
       "highlights": [
-        "Led a team of 8 during peak hours, communicating orders and delegating tasks to minimize service time",
-        "Optimized station layout for ease of use, reducing cleaning times by up to 50%",
-        "Trained and mentored new kitchen staff, improving onboarding speed and reducing early-stage errors"
+        "Operate kitchen independently across all functions (e.g. prep, cooking, plating, and running food) maintaining consistent output and quality without supervisory oversight",
+        "Develop and execute daily prep sequences by anticipating service demand, reducing in-service bottlenecks through proactive organization rather than reactive adjustments"
       ]
     },
     {
-      "name": "Cable Wharf Kitchen & Patio",
-      "position": "Cook (Seasonal)",
-      "startDate": "2022-05",
-      "endDate": "2022-08",
-      "location": "Halifax, NS",
+      "name": "Taproom260",
+      "position": "Cook",
+      "startDate": "2024/02",
+      "endDate": "2025/10",
+      "location": "Orléans, ON",
       "highlights": [
-        "Maintained speed and quality during rushes, preparing 100–150 meals per shift in a fast-paced waterfront kitchen",
-        "Served meals directly to tour boat guests, interacting with up to 200 patrons per day and resolving dietary or service issues in real time",
-        "Collaborated with both kitchen and front-of-house staff to coordinate catering for multiple tour departures"
+        "Sustained near-zero error rate across 150+ cover services by applying strict attention to detail and standardized prep procedures, earning consistent recognition from supervisors for quality and reliability",
+        "Accelerated team readiness for 4+ new staff members by leading hands-on station training, reducing onboarding time and maintaining service quality during high-volume periods"
       ]
     }
   ],
   "volunteer": [
     {
+      "organization": "Algonquin College Student Association (ACSA)",
+      "position": "Class Representative",
+      "startDate": "2026/09",
+      "endDate": "2027/04",
+      "location": "Algonquin College, Ottawa, ON",
+      "highlights": [
+        "Represented the interests of 30+ students in Cloud Development and Operations program, advocating for improvements to curriculum and student resources",
+        "Facilitated communication between students and faculty, ensuring timely resolution of concerns and fostering a collaborative learning environment"
+      ]
+    },
+
+    {
       "organization": "CU Esports (formerly Tespa Carleton)",
       "position": "Gamehead (Community Coordinator)",
-      "startDate": "2022-09",
-      "endDate": "2024-09",
+      "startDate": "2022/09",
+      "endDate": "2024/09",
       "location": "Carleton University, Ottawa, ON",
       "highlights": [
         "Consistently engaged and met demands of over 100 club members through active communication",
@@ -79,18 +93,6 @@
     }
   ],
   "projects": [
-    {
-      "name": "Personal IT Support & Configuration",
-      "description": "Ongoing personal and family technical support",
-      "keywords": ["Windows", "Linux", "Raspberry Pi", "Networking"],
-      "highlights": [
-        "Performed clean Windows installations and resolved performance issues including startup optimization, driver conflicts, and resource management",
-        "Configured WSL2 environments for hybrid Windows/Linux development workflows",
-        "Flashed and configured Raspberry Pi for personal server and automation projects",
-        "Set up and troubleshot smart home devices, mobile phones, and audio equipment for family and coworkers",
-        "Provided informal technical support to coworkers, diagnosing and resolving phone and device issues"
-      ]
-    },
     {
       "name": "AWS Cloud Resume Challenge",
       "description": "Cloud-hosted resume site with serverless backend",
@@ -112,30 +114,15 @@
         "Architected a normalized PostgreSQL database schema using SQLAlchemy to ensure data consistency and reduce redundancy across league records",
         "Implemented server-side calculation logic in Python to automatically derive complex metrics (e.g., ranking), removing the need for manual data processing"
       ]
-    },
+    }
+  ],
+  "certificates": [
     {
-      "name": "Workout Tracker",
-      "description": "Personal fitness tracking REST API",
-      "startDate": "2025",
-      "keywords": ["Python", "Flask", "TinyDB", "Notion API", "Docker", "Fly.io", "Pydantic"],
-      "highlights": [
-        "Developed a scalable and maintainable REST API with Flask, enabling structured workout logging and two-way sync with the Notion API",
-        "Designed modular services for data models, data syncing, and external API integration, promoting maintainable and traceable code",
-        "Containerized with Docker and deployed to Fly.io, using .env-based config and environment-specific secrets",
-        "Implemented input validation with Pydantic and applied robust error handling across all layers",
-        "Currently transforming to Spring Boot application deployed on AWS"
-      ]
-    },
-    {
-      "name": "Shadow Detection with Deep Learning",
-      "description": "Image segmentation pipeline for shadow detection",
-      "startDate": "2024",
-      "keywords": ["Python", "PyTorch", "NumPy"],
-      "highlights": [
-        "Created an image segmentation pipeline to detect shadows in images using UNet and SegNet architectures",
-        "Compared model performance using IoU and Dice Score, reducing prediction error by over 80% through hyperparameter tuning",
-        "Built reusable training and evaluation modules in PyTorch, streamlining rapid testing of new architectures"
-      ]
+      "name": "AWS Certified Cloud Practitioner",
+      "date": "2026/02",
+      "expires": "2029/02",
+      "issuer": "Amazon Web Services",
+      "url": "https://cp.certmetrics.com/amazon/en/public/verify/credential/5bfbdca3deb744369a9cf3a7d9704f75"
     }
   ],
   "skills": [
@@ -162,7 +149,7 @@
     {
       "name": "Cloud/DevOps",
       "keywords": [
-        "AWS (S3, Lambda, API Gateway)",
+        "AWS (S3, Lambda, API Gateway, DynamoDB)",
         "GitHub Actions",
         "CI/CD pipelines"
       ]
