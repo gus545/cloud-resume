@@ -24,6 +24,10 @@ env:
   # Output of the cloud-resume-backend SAM stack; update if that API is redeployed.
   COUNTER_API_URL: https://p8rsbd7mrh.execute-api.us-east-2.amazonaws.com/Prod/counter
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
