@@ -21,6 +21,8 @@ env:
   AWS_REGION: us-east-2
   S3_BUCKET: angus-macgillivary-static-portfolio-site
   CLOUDFRONT_DISTRIBUTION_ID: E4S45LV2XOZO8
+  # Output of the cloud-resume-backend SAM stack; update if that API is redeployed.
+  COUNTER_API_URL: https://p8rsbd7mrh.execute-api.us-east-2.amazonaws.com/Prod/counter
 
 jobs:
   build:
