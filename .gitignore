@@ -1,4 +1,8 @@
+.prettierrc
 __pycache__/
 .pytest_cache/
-*.pyc
-.DS_Store
+dist/
+
+# Separate repos cloned inside this one; never embed them as gitlinks
+/cloud-resume-frontend/
+/cloud-resume-backend/
