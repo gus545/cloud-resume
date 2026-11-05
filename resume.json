@@ -1,0 +1,190 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Angus MacGillivary",
+    "label": "Computer Science Graduate",
+    "email": "angus@macgillivary.dev",
+    "phone": "613-316-4793",
+    "url": "https://macgillivary.dev",
+    "summary": "CS graduate with a background in cloud computing and software engineering.  3+ years of experience working in fast-paced kitchens, developing strong teamwork and communication skills. Familiary with AWS, Microsoft Azure and full-stack technologies such as Python, PostgreSQL and FastAPI.  Passionate about learning and applying new technologies to solve real-world problems.",
+    "location": {
+      "city": "Orléans",
+      "region": "Ontario",
+      "countryCode": "CA"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "amacg",
+        "url": "https://linkedin.com/in/amacg"
+      },
+      {
+        "network": "GitHub",
+        "username": "gus545",
+        "url": "https://github.com/gus545"
+        }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Carleton University",
+      "area": "Computer Science Honours, Minor in Psychology",
+      "studyType": "Bachelor",
+      "startDate": "2019/09",
+      "endDate": "2025/02",
+      "location": "Ottawa, ON",
+      "courses": [
+        "Computer Vision",
+        "Reinforcement Learning",
+        "QA and Testing",
+        "Distributed Computing",
+        "Modern Datasets"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "That Cafe",
+      "position": "Cook",
+      "startDate": "2026/01",
+      "location": "Orléans, ON",
+      "highlights": [
+        "Operate kitchen independently across all functions (e.g. prep, cooking, plating, and running food) maintaining consistent output and quality without supervisory oversight",
+        "Develop and execute daily prep sequences by anticipating service demand, reducing in-service bottlenecks through proactive organization rather than reactive adjustments"
+      ]
+    },
+    {
+      "name": "Taproom260",
+      "position": "Cook",
+      "startDate": "2024/02",
+      "endDate": "2025/10",
+      "location": "Orléans, ON",
+      "highlights": [
+        "Sustained near-zero error rate across 150+ cover services by applying strict attention to detail and standardized prep procedures, earning consistent recognition from supervisors for quality and reliability",
+        "Accelerated team readiness for 4+ new staff members by leading hands-on station training, reducing onboarding time and maintaining service quality during high-volume periods"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Algonquin College Student Association (ACSA)",
+      "position": "Class Representative",
+      "startDate": "2026/09",
+      "endDate": "2027/04",
+      "location": "Algonquin College, Ottawa, ON",
+      "highlights": [
+        "Represented the interests of 30+ students in Cloud Development and Operations program, advocating for improvements to curriculum and student resources",
+        "Facilitated communication between students and faculty, ensuring timely resolution of concerns and fostering a collaborative learning environment"
+      ]
+    },
+
+    {
+      "organization": "CU Esports (formerly Tespa Carleton)",
+      "position": "Gamehead (Community Coordinator)",
+      "startDate": "2022/09",
+      "endDate": "2024/09",
+      "location": "Carleton University, Ottawa, ON",
+      "highlights": [
+        "Consistently engaged and met demands of over 100 club members through active communication",
+        "Successfully balanced teams for intramurals using k-means clustering",
+        "Organized and ran in-person and online events for 50+ attendees",
+        "Regularly updated Discord server with community content, leading to 25% increase in activity over tenure"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AWS Cloud Resume Challenge",
+      "description": "Cloud-hosted resume site with serverless backend",
+      "keywords": ["AWS", "S3", "Lambda", "API Gateway", "DynamoDB", "GitHub Actions"],
+      "highlights": [
+        "Building cloud-hosted resume site with serverless backend and CI/CD pipeline",
+        "Configuring AWS services including S3 static hosting, Lambda functions, and API Gateway",
+        "Implementing visitor counter with DynamoDB and Python Lambda function",
+        "Setting up GitHub Actions for automated testing and deployment"
+      ]
+    },
+    {
+      "name": "Blue Lock Bot",
+      "description": "Soccer League Management System & Analytics",
+      "keywords": ["Python", "FastAPI", "SQLAlchemy", "Notion API", "PostgreSQL", "Docker", "Pydantic"],
+      "highlights": [
+        "Developed a Discord bot using Python to automate match scheduling, attendance tracking and stat collection for a recreational team in a 40+ team league",
+        "Containerized the application and database using Docker for consistent deployment environments",
+        "Architected a normalized PostgreSQL database schema using SQLAlchemy to ensure data consistency and reduce redundancy across league records",
+        "Implemented server-side calculation logic in Python to automatically derive complex metrics (e.g., ranking), removing the need for manual data processing"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "date": "2026/02",
+      "expires": "2029/02",
+      "issuer": "Amazon Web Services",
+      "url": "https://cp.certmetrics.com/amazon/en/public/verify/credential/5bfbdca3deb744369a9cf3a7d9704f75"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Support",
+      "keywords": [
+        "Windows installation & optimization",
+        "Hardware troubleshooting",
+        "Mobile device setup (iPhone/Android)",
+        "End-user support",
+        "WSL2",
+        "Smart home configuration"
+      ]
+    },
+    {
+      "name": "Systems",
+      "keywords": [
+        "Linux (Ubuntu, Raspberry Pi)",
+        "Basic networking (Wi-Fi, VPN)",
+        "Docker",
+        "Git/GitHub"
+      ]
+    },
+    {
+      "name": "Cloud/DevOps",
+      "keywords": [
+        "AWS (S3, Lambda, API Gateway, DynamoDB)",
+        "GitHub Actions",
+        "CI/CD pipelines"
+      ]
+    },
+    {
+      "name": "Languages",
+      "keywords": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "Bash"
+      ]
+    },
+    {
+      "name": "Data",
+      "keywords": [
+        "PostgreSQL",
+        "MongoDB",
+        "SQLAlchemy",
+        "Prisma",
+        "Pydantic"
+      ]
+    },
+    {
+      "name": "Libraries/Frameworks",
+      "keywords": [
+        "FastAPI",
+        "Flask",
+        "PyTorch"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2025-01-01"
+  }
+}
